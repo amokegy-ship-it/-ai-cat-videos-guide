@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد فيديوهات القطط بالذكاء الاصطناعي | AI Cat Video Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-cat"></i>
+                <span>AI Cat Videos</span>
+            </div>
+            <nav class="nav">
+                <a href="#home">الرئيسية</a>
+                <a href="#tools">أدوات الذكاء الاصطناعي</a>
+                <a href="#templates">القوالب</a>
+                <a href="#script">المولد</a>
+                <a href="#sounds">الأصوات</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>🎬 أنشئ فيديوهات قطط ترند بالذكاء الاصطناعي</h1>
+                <p>أفضل الأدوات والموارد لإنشاء مقاطع فيديو قطط يوتيوب شورت</p>
+                <div class="hero-buttons">
+                    <a href="#tools" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> ابدأ الآن
+                    </a>
+                    <a href="#templates" class="btn btn-secondary">
+                        <i class="fas fa-lightbulb"></i> استكشف القوالب
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cats">
+                    <div class="cat-card">🐱</div>
+                    <div class="cat-card">😺</div>
+                    <div class="cat-card">😻</div>
+                    <div class="cat-card">🐈</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tools Section -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>🤖 أدوات الذكاء الاصطناعي لإنشاء الفيديو</h2>
+                <p>أفضل المنصات المجانية والمدفوعة لتوليد الفيديو بالذكاء الاصطناعي</p>
+            </div>
+            <div class="tools-grid" id="tools-grid">
+                <!-- Tools will be loaded from JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section class="templates-section" id="templates">
+        <div class="container">
+            <div class="section-header">
+                <h2>🐱 قوالب فيديوهات القطط الترند</h2>
+                <p>أفكار وقوالب مجانية لمقاطع قطط يوتيوب شورت</p>
+            </div>
+            <div class="templates-grid" id="templates-grid">
+                <!-- Templates will be loaded from JavaScript -->
+            </div>
+            <div class="templates-actions">
+                <button class="btn btn-primary" id="random-template">
+                    <i class="fas fa-dice"></i> فكرة عشوائية
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script Generator Section -->
+    <section class="script-section" id="script">
+        <div class="container">
+            <div class="section-header">
+                <h2>✍️ مولد السيناريوهات</h2>
+                <p>أنشئ سيناريو جذاب لفيديو القطط الخاص بك</p>
+            </div>
+            <div class="script-generator">
+                <div class="script-options">
+                    <label>نوع الفيديو:</label>
+                    <select id="video-type">
+                        <option value="funny">فيديو كوميدي</option>
+                        <option value="cute">فيديو لطيف</option>
+                        <option value="story">قصة قصيرة</option>
+                        <option value="tutorial">تعليمي</option>
+                        <option value="compilation">تجميعية</option>
+                    </select>
+                </div>
+                <div class="script-options">
+                    <label>المدة:</label>
+                    <select id="video-duration">
+                        <option value="15">15 ثانية</option>
+                        <option value="30">30 ثانية</option>
+                        <option value="60">60 ثانية</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="generate-script">
+                    <i class="fas fa-magic"></i> أنشئ سيناريو
+                </button>
+                <div class="script-output" id="script-output">
+                    <p class="placeholder">اضغط على الزر لأشاء سيناريو جديد...</p>
+                </div>
+                <button class="btn btn-secondary" id="copy-script">
+                    <i class="fas fa-copy"></i> نسخ السيناريو
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sound Effects Section -->
+    <section class="sounds-section" id="sounds">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔊 مكتبة المؤثرات الصوتية</h2>
+                <p>أفضل المصادر للمؤثرات الصوتية المجانية</p>
+            </div>
+            <div class="sounds-grid">
+                <div class="sound-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Freesound</h3>
+                    <p>مكتبة ضخمة من المؤثرات الصوتية المجانية</p>
+                    <a href="https://freesound.org" target="_blank" class="btn btn-small">زر الموقع</a>
+                </div>
+                <div class="sound-card">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>ZapSplat</h3>
+                    <p>مؤثرات صوتية مجانية عالية الجودة</p>
+                    <a href="https://zapsplat.com" target="_blank" class="btn btn-small">زر الموقع</a>
+                </div>
+                <div class="sound-card">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Mixkit</h3>
+                    <p>مؤثرات صوتية وفيديو مجانية</p>
+                    <a href="https://mixkit.co" target="_blank" class="btn btn-small">زر الموقع</a>
+                </div>
+                <div class="sound-card">
+                    <i class="fas fa-wave-square"></i>
+                    <h3>Epidemic Sound</h3>
+                    <p>مكتبة صوتية احترافية (مدفوع)</p>
+                    <a href="https://www.epidemicsound.com" target="_blank" class="btn btn-small">زر الموقع</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Section -->
+    <section class="tutorial-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📚 كيف تبدأ في إنشاء فيديوهات القطط بالذكاء الاصطناعي</h2>
+            </div>
+            <div class="tutorial-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>اختر أداة الذكاء الاصطناعي</h3>
+                        <p>سجل في إحدى أدوات إنشاء الفيديو مثل Runway أو Pika Labs</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>اكتب الـ Prompt</h3>
+                        <p>صمم وصفاً دقيقاً للمشهد الذي تريد إنشاؤه</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>أنشئ الفيديو</h3>
+                        <p>استخدم الأداة لتوليد الفيديو بناءً على وصفك</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>أضف الصوت والمؤثرات</h3>
+                        <p>قم بتحرير الفيديو وأضف الموسيقى والمؤثرات الصوتية</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>انشر على يوتيوب</h3>
+                        <p>ارفع الفيديو على يوتيوب شورت وابدأ بالربح!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>مولد فيديوهات القطط بالذكاء الاصطناعي 🐱</p>
+            <p>جميع الحقوق محفوظة 2024</p>
+        </div>
+    </footer>
+
+    <script src="tools-data.js"></script>
+    <script src="templates.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
